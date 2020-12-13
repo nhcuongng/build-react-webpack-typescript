@@ -1,4 +1,5 @@
 
+import { Hello } from '@Components/Hello';
 import React from 'react';
 
 import './App.css';
@@ -7,7 +8,8 @@ class App extends React.PureComponent {
 	render() {
 		return (
 			<div>
-				<h1>Hello World!</h1>
+				<h1>I am Cuong</h1>
+				<Hello />
 			</div>
 		);
 	}

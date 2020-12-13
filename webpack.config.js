@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   entry: path.resolve(__dirname, './src/index.tsx'),
@@ -10,7 +11,11 @@ module.exports = {
     filename: 'bundle.js'
   },
   // resolve property allows us to specify which extensions Webpack will resolve
-  resolve: { extensions: [".js", ".jsx", ".ts", ".tsx"] },
+  resolve: {
+    // use path alias (readme for detail)
+    plugins: [new TsconfigPathsPlugin()],
+    extensions: [".js", ".jsx", ".ts", ".tsx"]
+  },
   module: {
     rules: [
       {
